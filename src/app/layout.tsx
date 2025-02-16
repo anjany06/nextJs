@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/component/header";
+//why @ ->it is called absolute routing 
+//and we also another one called relative routing
+// import Header form "../components/header" -> do dots isiliyee kyuki mujhe bahr jana hai 
+// and the above is called relative routing or relative path
+//jn bhi hmm dot dot use krte h toh means hme bahar jana hai toh woh h relative routing but isme bahut confusion ho jata h jb jyada file hai
+//jitna jyada nestested folder bnta jayega utna hi complex hoga dot lagana
+
+
+//toh jbbhi hm @ lagate h toh woh src ko point krne lgata hai and wha se directly ja skte hai 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <h1>This is a layout</h1>
+        <Header />
         {children}
       </body>
     </html>
